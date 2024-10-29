@@ -1,5 +1,4 @@
 import ExpandableText from '@/components/Expandable/ExpandableText';
-import Link from 'next/link';
 
 export default function CuidadoAgua() {
   return (
