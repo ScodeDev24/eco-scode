@@ -6,10 +6,10 @@ export default function Navbar() {
     const [isOpen, setIsOpen] = useState<boolean>(false);
 
     return (
-        (<nav className="bg-green-600 p-4">
+        (<nav className="bg-primary p-4">
             <div className="container mx-auto flex justify-between items-center">
                 {/* Logo */}
-                <div className="text-white text-2xl font-bold">MiLogo</div>
+                <Link href="/" className="text-white text-2xl font-bold">EcoScode</Link>
 
                 {/* Botón de menú para mobile */}
                 <div className="md:hidden">

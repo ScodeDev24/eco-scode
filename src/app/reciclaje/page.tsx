@@ -1,34 +1,61 @@
-import Link from 'next/link';
+import Accordion from '@/components/Accordion/Accordion';
+
+interface DataItem {
+  topic: string;
+  description: string[];
+}
+
+
+const recyclingData: DataItem[] = [
+  {
+    topic: "Contenedor Azul (Plásticos)",
+    description: [
+      "Botellas de plástico (agua, refrescos, etc.)",
+      "Envases de plástico (productos de limpieza, shampoo)",
+      "Tapas de plástico",
+      "Bolsas de plástico limpias",
+      "Tetra Paks (envases de leche, jugos)",
+      "Bandejas de plástico limpias (de comida)",
+      "Vasos y platos plásticos desechables (limpios)",
+      "Film transparente y envoltura de plástico",
+    ],
+  },
+  {
+    topic: "Contenedor Verde (Orgánicos)",
+    description: [
+      "Restos de comida (frutas, verduras, carne, huesos)",
+      "Cáscaras de huevo",
+      "Restos de café y té (filtros y posos)",
+      "Cáscaras de frutas y vegetales",
+      "Residuos de jardín (hojas, ramas pequeñas)",
+      "Papel o cartón sucio (como servilletas usadas)",
+      "Alimentos en mal estado",
+    ],
+  },
+  {
+    topic: "Contenedor Gris (Papel y Cartón)",
+    description: [
+      "Periódicos",
+      "Revistas",
+      "Cajas de cartón (cajas de cereales, zapatos, etc.)",
+      "Folletos, catálogos",
+      "Papel de oficina",
+      "Libros y cuadernos sin espiral",
+      "Sobres sin ventanillas de plástico",
+      "Papel kraft (papel de bolsas de compras)",
+      "Cajas de cartón ondulado",
+      "Papel de envolver no plastificado",
+    ],
+  },
+];
 
 export default function Reciclaje() {
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-4">Reciclaje</h1>
-
-      {/* Submenú de subsecciones */}
-      <nav className="mb-6">
-        <ul className="space-y-2">
-          <li>
-            <Link href="/reciclaje/tipos">
-              Tipos de Materiales Reciclables
-            </Link>
-          </li>
-          <li>
-            <Link href="/reciclaje/guia">
-              Guía de Reciclaje
-            </Link>
-          </li>
-          <li>
-            <Link href="/reciclaje/reducir">
-              Cómo Reducir el Uso de Plásticos
-            </Link>
-          </li>
-        </ul>
-      </nav>
-
-      <p>
-        Descubre cómo reciclar correctamente y ayuda al medio ambiente con estos consejos.
-      </p>
-    </div>
+    <section className="flex flex-col items-center justify-center">
+      <h1 className="text-center dark:text-white lg:text-4xl text-3xl lg:leading-9 leading-7 text-gray-800 font-semibold mb-4 mt-10">
+        Aprende a Reciclar
+      </h1>
+      <Accordion generalData={recyclingData} isList={true} />
+    </section>
   );
 }
