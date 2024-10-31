@@ -51,7 +51,7 @@ const recyclingData: DataItem[] = [
 
 export default function Reciclaje() {
   return (
-    <section className="flex flex-col items-center justify-center">
+    <section>
       <h1 className="text-center dark:text-white lg:text-4xl text-3xl lg:leading-9 leading-7 text-gray-800 font-semibold mb-4 mt-10">
         Aprende a Reciclar
       </h1>
