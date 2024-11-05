@@ -1,11 +1,13 @@
 'use client'
 import { useState, useEffect, useCallback } from "react"
 import Image from 'next/image';
+import Card from "../Card/Card";
 interface Slide {
     img: string;
-    alt:string;
-    label:string;
-    description:string;
+    alt: string;
+    label: string;
+    description: string;
+    link: string;
 }
 export default function Carousel() {
     const [activeIndex, setActiveIndex] = useState<number>(0)
@@ -14,68 +16,72 @@ export default function Carousel() {
             img: "/cuidado_agua.jpg",
             alt: "Cuidado del Agua",
             label: "Cuidado del Agua",
-            description: "Some representative placeholder content for the first slide.",
+            description: "Más de 2 mil millones de personas ya viven sin acceso a agua potable. Con pequeños cambios, tú puedes marcar la diferencia.",
+            link: "/cuidado-agua",
         },
         {
             img: "/cuidado_ambiente.jpg",
             alt: "Cuidado del Ambiente",
-            label: "Cuidado del ambiente",
-            description: "Some representative placeholder content for the second slide.",
+            label: "Cuidado del Ambiente",
+            description: "El 70% de las especies están en riesgo por la deforestación y contaminación. Defiende la biodiversidad, preserva la vida",
+            link: "/reciclaje",
         },
         {
             img: "/reciclaje.jpg",
             alt: "Reciclaje",
             label: "Reciclaje",
-            description: "Some representative placeholder content for the third slide.",
+            description: "Cada botella de plástico tarda hasta 500 años en descomponerse. Recicla, porque el futuro no puede esperar tanto tiempo.",
+            link: "/medio-ambiente",
         },
     ];
 
     const handlePrev = useCallback((): void => {
         const newIndex = (activeIndex === 0) ? slides.length - 1 : activeIndex - 1;
         setActiveIndex(newIndex);
-      }, [activeIndex, slides.length]);
-      
-      const handleNext = useCallback((): void => {
+    }, [activeIndex, slides.length]);
+
+    const handleNext = useCallback((): void => {
         const newIndex = (activeIndex === slides.length - 1) ? 0 : activeIndex + 1;
         setActiveIndex(newIndex);
-      }, [activeIndex, slides.length]);
-      
-      useEffect(() => {
+    }, [activeIndex, slides.length]);
+
+    useEffect(() => {
         const interval = setInterval(() => {
-          handleNext();
-        }, 3000);
-      
+            handleNext();
+        }, 5000);
+
         return () => clearInterval(interval);
-      }, [handleNext]);
+    }, [handleNext]);
 
     return (
-       <div
+        <div
             id="carouselDarkVariant"
             className="relative"
             data-twe-carousel-init
             data-twe-ride="carousel">
-            
+
             <div
-                className="relative w-full overflow-hidden after:clear-both after:block after:content-['']">
+                className="relative overflow-hidden after:clear-both after:block after:content-['']">
                 {slides.map((slide, index) => (
                     <div
                         key={index}
-                        className={`relative float-left -mr-[100%] w-full transition-opacity duration-[600ms] ease-in-out ${
-                            index === activeIndex ? 'opacity-100' : 'opacity-0'
-                        }`}>
+                        className={`relative float-left -mr-[100%] w-full transition-opacity duration-[600ms] ease-in-out ${index === activeIndex ? 'opacity-100' : 'opacity-0'
+                            }`}>
                         <Image
                             src={slide.img}
-                            className="block w-full"
+                            className="block w-full z-0"
                             alt={slide.alt}
                             width={800}
-                            height={600} 
-                            />
-                        <div
-                            className="absolute inset-x-[15%] bottom-5 hidden py-5 text-center text-black md:block">
-                            <h5 className="text-xl">{slide.label}</h5>
-                            <p>{slide.description}</p>
+                            height={600}
+                        />
+                        {index === activeIndex && ( <div className="absolute bottom-0 w-full z-[999]">
+                            <Card header={slide.label} description={slide.description} link={slide.link} />
                         </div>
+                        )}
+
                     </div>
+
+
                 ))}
             </div>
 
@@ -84,9 +90,8 @@ export default function Carousel() {
                 {slides.map((_, index) => (
                     <button
                         key={index}
-                        className={`mx-[3px] box-content h-[3px] w-[30px] cursor-pointer ${
-                            index === activeIndex ? 'bg-black' : 'bg-gray-400'
-                        }`}
+                        className={`mx-[3px] box-content h-[3px] w-[30px] cursor-pointer ${index === activeIndex ? 'bg-black' : 'bg-gray-400'
+                            }`}
                         onClick={() => setActiveIndex(index)}
                         aria-label={`Slide ${index + 1}`}>
                     </button>

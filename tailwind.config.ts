@@ -9,11 +9,11 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: '#4CAF50',       // Verde suave
-        secondary: '#03A9F4',     // Azul claro
-        accent: '#FFEB3B',        // Amarillo brillante
-        neutral: '#8D6E63',       // Marrón claro
-        dark: '#212121',          // Gris oscuro
+        primary: '#C9E9D2',       // Verde suave
+        secondary: '#FEF9F2',     // Azul claro
+        accent: '#789DBC',        // Amarillo brillante
+        neutral: '#FFE3E3',       // Marrón claro
+        darkBlue: '#000B58',          // Gris oscuro
         lightGray: '#9E9E9E',     // Gris claro
       },
     },

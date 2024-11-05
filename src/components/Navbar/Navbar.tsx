@@ -9,11 +9,11 @@ export default function Navbar() {
         (<nav className="bg-primary p-4">
             <div className="container mx-auto flex justify-between items-center">
                 {/* Logo */}
-                <Link href="/" className="text-white text-2xl font-bold">EcoScode</Link>
+                <Link href="/" className="text-darkBlue text-2xl font-bold">EcoScode</Link>
 
                 {/* Botón de menú para mobile */}
                 <div className="md:hidden">
-                    <button onClick={() => setIsOpen(!isOpen)} className="text-white">
+                    <button onClick={() => setIsOpen(!isOpen)} className="text-darkBlue">
                         {isOpen ? (
                             <svg
                                 className="w-6 h-6"
@@ -50,13 +50,13 @@ export default function Navbar() {
 
                 {/* Links para desktop */}
                 <div className="hidden md:flex space-x-4">
-                    <Link href="/cuidado-agua" className="text-white hover:text-gray-300">
+                    <Link href="/cuidado-agua" className="text-accent hover:text-darkBlue">
                         Cuidado del Agua
                     </Link>
-                    <Link href="/reciclaje" className="text-white hover:text-gray-300">
+                    <Link href="/reciclaje" className="text-accent hover:text-darkBlue">
                         Reciclaje
                     </Link>
-                    <Link href="/medio-ambiente" className="text-white hover:text-gray-300">
+                    <Link href="/medio-ambiente" className="text-accent hover:text-darkBlue">
                         Medio Ambiente
                     </Link>
                 </div>
@@ -67,17 +67,17 @@ export default function Navbar() {
                 <div className="md:hidden mt-4 space-y-4">
                     <ul>
                         <li>
-                            <Link href="/cuidado-agua" className="text-white hover:text-gray-300">
+                            <Link href="/cuidado-agua" className="text-accent hover:text-darkBlue">
                                 Cuidado del Agua
                             </Link>
                         </li>
                         <li>
-                            <Link href="/reciclaje" className="text-white hover:text-gray-300">
+                            <Link href="/reciclaje" className="text-accent hover:text-darkBlue">
                                 Reciclaje
                             </Link>
                         </li>
                         <li>
-                            <Link href="/medio-ambiente" className="text-white hover:text-gray-300">
+                            <Link href="/medio-ambiente" className="text-accent hover:text-darkBlue">
                                 Medio Ambiente
                             </Link>
                         </li>
