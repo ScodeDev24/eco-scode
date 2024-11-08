@@ -63,22 +63,22 @@ export default function Carousel() {
             <div
                 className="relative overflow-hidden after:clear-both after:block after:content-['']">
                 {slides.map((slide, index) => (
-                    <div
-                        key={index}
-                        className={`relative float-left -mr-[100%] w-full transition-opacity duration-[600ms] ease-in-out ${index === activeIndex ? 'opacity-100' : 'opacity-0'
-                            }`}>
-                        <Image
-                            src={slide.img}
-                            className="block w-full z-0"
-                            alt={slide.alt}
-                            width={800}
-                            height={600}
-                        />
-                        {index === activeIndex && ( <div className="absolute bottom-0 w-full z-[999]">
-                            <Card header={slide.label} description={slide.description} link={slide.link} />
-                        </div>
-                        )}
-
+                       <div
+                       key={index}
+                       className={`relative float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out ${index === activeIndex ? 'translate-x-0' : 'translate-x-full'
+                           } ${index === activeIndex ? 'opacity-100' : 'opacity-0'}`}>
+                       <Image
+                           src={slide.img}
+                           className="block w-full z-0"
+                           alt={slide.alt}
+                           width={800}
+                           height={600}
+                       />
+                       {index === activeIndex && (
+                           <div className="w-full z-[999]">
+                               <Card header={slide.label} description={slide.description} link={slide.link} />
+                           </div>
+                       )}
                     </div>
 
 
@@ -117,7 +117,6 @@ export default function Carousel() {
                             d="M15.75 19.5L8.25 12l7.5-7.5" />
                     </svg>
                 </span>
-                <span className="sr-only">Previous</span>
             </button>
 
             <button
@@ -138,7 +137,6 @@ export default function Carousel() {
                             d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                     </svg>
                 </span>
-                <span className="sr-only">Next</span>
             </button>
         </div>
     );
