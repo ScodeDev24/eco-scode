@@ -42,7 +42,7 @@ export default function Accordion({ generalData, isList }: DataProps) {
                 </div>
                 <button
                   aria-label="toggler"
-                  className="focus:outline-none focus:ring-2 focus:ring-offset-2"
+                  className="focus:outline-none focus:ring-2 focus:ring-offset-2 "
                   onClick={() => toggleQuestion(index)}
                 >
                 <Image
