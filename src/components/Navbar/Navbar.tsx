@@ -1,6 +1,7 @@
 "use client"
 import { useState } from 'react';
 import Link from 'next/link'
+import Image from 'next/image';
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -9,7 +10,20 @@ export default function Navbar() {
         (<nav className="bg-primary p-4">
             <div className="container mx-auto flex justify-between items-center">
                 {/* Logo */}
-                <Link href="/" className="text-darkBlue text-2xl font-bold">EcoScode</Link>
+                <Link href="/" className='flex gap-1 items-center'>
+                <div className='max-w-10'>
+                    <Image
+                           src="/scode.png"
+                           className="block w-full z-0 rounded-full"
+                           alt='Scode'
+                           width={50}
+                           height={50}
+                       />
+                </div>
+                <div className='text-xl font-bold text-darkBlue'>
+                    EcoScode
+                </div>
+                    </Link>
 
                 {/* Botón de menú para mobile */}
                 <div className="md:hidden">
