@@ -33,8 +33,8 @@ export default function Accordion({ generalData, isList }: DataProps) {
             <div className="w-full md:px-6">
               <div className="flex justify-between items-center w-full">
                 <div>
-                  <p className="flex justify-center items-center dark:text-white font-medium text-base leading-6 text-gray-800">
-                    <span className="lg:mr-6 mr-4 dark:text-white lg:text-2xl md:text-xl text-lg leading-6 md:leading-5 lg:leading-4 font-semibold text-gray-800">
+                  <p className="flex justify-center items-center dark:text-darkBlue font-medium text-base leading-6 text-gray-800">
+                    <span className="lg:mr-6 mr-4 dark:text-darkBlue lg:text-2xl md:text-xl text-lg leading-6 md:leading-5 lg:leading-4 font-semibold text-gray-800">
                       {index + 1}.
                     </span>
                     {value.topic}
@@ -55,7 +55,7 @@ export default function Accordion({ generalData, isList }: DataProps) {
                 </button>
               </div>
               <div className={`${openQuestion === index ? 'block' : 'hidden'} mt-6 w-full`}>
-                <div className="text-base leading-6 text-gray-600 dark:text-gray-300 font-normal">
+                <div className="text-base leading-6 text-gray-600 dark:text-darkBlue font-normal">
                   {isList ? (
                     <ul>
                     {value.description.map((desc, descIndex) => (
