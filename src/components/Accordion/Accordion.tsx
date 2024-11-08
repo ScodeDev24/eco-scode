@@ -26,7 +26,7 @@ export default function Accordion({ generalData, isList }: DataProps) {
   return (
     <div className="lg:container lg:mx-auto lg:py-16 md:py-12 md:px-6 py-12 px-4">
 
-      <div className="lg:mt-12 bg-gray-100 dark:bg-gray-800 md:mt-10 mt-8 lg:py-7 lg:px-6 md:p-6 py-6 px-4 lg:w-8/12 w-full mx-auto">
+      <div className="lg:mt-12 bg-gray-100 md:mt-10 mt-8 lg:py-7 lg:px-6 md:p-6 py-6 px-4 lg:w-8/12 w-full mx-auto">
         {generalData.map((value, index) => (
           <div key={index}>
             <hr className="w-full lg:mt-10 md:mt-12 md:mb-8 my-8" />
@@ -42,11 +42,11 @@ export default function Accordion({ generalData, isList }: DataProps) {
                 </div>
                 <button
                   aria-label="toggler"
-                  className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800"
+                  className="focus:outline-none focus:ring-2 focus:ring-offset-2"
                   onClick={() => toggleQuestion(index)}
                 >
                 <Image
-                  className={`transform ${openQuestion === index ? 'rotate-180' : ''} dark:hidden`}
+                  className={`transform ${openQuestion === index ? 'rotate-180' : ''}`}
                   src="/up_arrow.svg"
                   alt="toggler"
                   width={20}  
