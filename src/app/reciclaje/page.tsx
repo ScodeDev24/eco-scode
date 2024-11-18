@@ -52,7 +52,7 @@ const recyclingData: DataItem[] = [
 export default function Reciclaje() {
   return (
     <section>
-      <h1 className="text-center dark:text-white lg:text-4xl text-3xl lg:leading-9 leading-7 text-gray-800 font-semibold mb-4 mt-10">
+      <h1 className="text-center dark:text-white lg:text-4xl text-3xl lg:leading-9 leading-7 text-slate-50 font-semibold mb-4 mt-10">
         Aprende a Reciclar
       </h1>
       <Accordion generalData={recyclingData} isList={true} />

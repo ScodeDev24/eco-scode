@@ -7,7 +7,7 @@ export default function Navbar() {
     const [isOpen, setIsOpen] = useState<boolean>(false);
 
     return (
-        (<nav className="bg-primary p-4">
+        (<nav className="p-4">
             <div className="container mx-auto flex justify-between items-center">
                 {/* Logo */}
                 <Link href="/" className='flex gap-1 items-center'>
@@ -20,14 +20,14 @@ export default function Navbar() {
                            height={50}
                        />
                 </div>
-                <div className='text-xl font-bold text-darkBlue'>
+                <div className='text-xl font-bold text-slate-50 font-sans'>
                     EcoScode
                 </div>
                     </Link>
 
                 {/* Botón de menú para mobile */}
                 <div className="md:hidden">
-                    <button onClick={() => setIsOpen(!isOpen)} className="text-darkBlue">
+                    <button onClick={() => setIsOpen(!isOpen)} className="text-slate-50">
                         {isOpen ? (
                             <svg
                                 className="w-6 h-6"
@@ -64,13 +64,13 @@ export default function Navbar() {
 
                 {/* Links para desktop */}
                 <div className="hidden md:flex space-x-4">
-                    <Link href="/cuidado-agua" className="text-accent hover:text-darkBlue">
+                    <Link href="/cuidado-agua" className="text-slate-50 hover:text-darkBlue font-sans font-bold">
                         Cuidado del Agua
                     </Link>
-                    <Link href="/reciclaje" className="text-accent hover:text-darkBlue">
+                    <Link href="/reciclaje" className="text-slate-50 hover:text-darkBlue font-sans font-bold">
                         Reciclaje
                     </Link>
-                    <Link href="/medio-ambiente" className="text-accent hover:text-darkBlue">
+                    <Link href="/medio-ambiente" className="text-slate-50 hover:text-darkBlue font-sans font-bold">
                         Medio Ambiente
                     </Link>
                 </div>
@@ -81,17 +81,17 @@ export default function Navbar() {
                 <div className="md:hidden mt-4 space-y-4">
                     <ul>
                         <li>
-                            <Link href="/cuidado-agua" className="text-accent hover:text-darkBlue">
+                            <Link href="/cuidado-agua" className="text-slate-50 hover:text-darkBlue">
                                 Cuidado del Agua
                             </Link>
                         </li>
                         <li>
-                            <Link href="/reciclaje" className="text-accent hover:text-darkBlue">
+                            <Link href="/reciclaje" className="text-slate-50 hover:text-darkBlue">
                                 Reciclaje
                             </Link>
                         </li>
                         <li>
-                            <Link href="/medio-ambiente" className="text-accent hover:text-darkBlue">
+                            <Link href="/medio-ambiente" className="text-slate-50 hover:text-darkBlue">
                                 Medio Ambiente
                             </Link>
                         </li>

@@ -59,7 +59,7 @@ const carbonFootprintData: DataItem[] = [
 export default function MedioAmbiente() {
   return (
     <section>
-      <h1 className="text-center dark:text-white lg:text-4xl text-3xl lg:leading-9 leading-7 text-gray-800 font-semibold mt-10">Reduce tu huella de carbono</h1>
+      <h1 className="text-center dark:text-white lg:text-4xl text-3xl lg:leading-9 leading-7 text-slate-50 font-semibold mt-10">Reduce tu huella de carbono</h1>
       <Accordion generalData={carbonFootprintData} isList={true}/>
     </section>
   );
